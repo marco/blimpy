@@ -1,0 +1,12 @@
+{
+  "name": "blimpy",
+  "version": "0.0.0",
+  "description": "Easily set the class of an object.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": "github:skunkmb/blimpy",
+  "author": "Marco Burstein <theskunkmb@gmail.com>",
+  "license": "MIT"
+}
