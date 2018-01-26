@@ -2,7 +2,7 @@
   "name": "blimpy",
   "version": "0.0.0",
   "description": "Easily set the class of an object.",
-  "main": "app.js",
+  "main": "blimpy.js",
   "scripts": {
     "test": "mocha tests"
   },
