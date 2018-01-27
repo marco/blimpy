@@ -27,7 +27,7 @@ and then retrieving it later, *it won't have the methods from `FoodClass`*.
 
  - blimpy is **small** (`blimpy.min.js` is less than `200 bytes`).
  - blimpy is **simple** (blimpy only uses `2` built-in JS functions).
- - blimpy is **well-tested** (blimpy has `8` tests using MochaJS)
+ - blimpy is **well-tested** (blimpy has `16` tests using MochaJS)
 
 ## Sample Usage
 
