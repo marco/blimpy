@@ -22,10 +22,7 @@ blimpy.withProto = function blimpyWithPrototype(someProto, someObject) {
  * @returns {object} The object with the new prototype.
  */
 blimpy.withClass = function blimpyWithClass(someClass, someObject) {
-    return Object.assign(
-        Object.create(someClass.prototype),
-        someObject,
-    );
+    return blimpy.withProto(someClass.prototype, someObject);
 }
 
 /**
