@@ -1,6 +1,6 @@
 # Architecture
 
- - `dist`: The distribution directory. This is where minified files go for use. It is updated *not after every change*, but *on version increases* (commits in the style of `Bump to vX.Y.Z.`).
+ - `dist`: The distribution directory. This is where minified files go for use.
 
     - `blimpy.min.js`: The minified version of `src/blimpy.js`.
 
