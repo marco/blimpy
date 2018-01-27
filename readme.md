@@ -96,9 +96,10 @@ npm install --save blimpy
 ## Full Example File
 
 ```js
+// Require blimpy.
 let blimpy = require('blimpy');
 
-// Arbitrary class.
+// Some arbitrary class.
 class FoodClass {
     constructor(name) {
         this.name = name;
@@ -110,7 +111,7 @@ class FoodClass {
     }
 }
 
-// Some food object without the `Food` class prototype, in this case
+// Some food object without the `FoodClass` prototype, in this case
 // an object literal.
 let foodObject = {
     name: 'apple',
