@@ -8,9 +8,15 @@
       such as one from a database, <strong>blimpy</strong> is the best way to do it.
     </p>
     <p>
-        <img src="https://img.shields.io/npm/v/blimpy.svg" />
-        <img src="https://img.shields.io/travis/skunkmb/blimpy.svg" />
-        <img src="https://img.shields.io/github/license/skunkmb/blimpy.svg" />
+        <a href="https://www.npmjs.com/package/blimpy">
+            <img src="https://img.shields.io/npm/v/blimpy.svg" />
+        </a>
+        <a href="https://www.travis-ci.org/skunkmb/blimpy">
+            <img src="https://img.shields.io/travis/skunkmb/blimpy.svg" />
+        </a>
+        <a href="https://github.com/skunkmb/blimpy/blob/master/license.txt">
+            <img src="https://img.shields.io/github/license/skunkmb/blimpy.svg" />
+        </a>
     </p>
 </div>
 
