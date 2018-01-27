@@ -156,7 +156,7 @@ for (let i = 0; i < blimpys.length; i++) {
                 it('should return the object with the new prototype', () => {
                     assert.equal(
                         foodObjectWithNoProto.__proto__,
-                        Object.prototype,
+                        Object.prototype
                     );
                 });
 
@@ -174,7 +174,7 @@ for (let i = 0; i < blimpys.length; i++) {
                     foodObjectWithNoProto = blimpy.withNoClass(foodObject);
                     assert.equal(
                         foodObjectWithNoProto.__proto__,
-                        Object.prototype,
+                        Object.prototype
                     );
                 });
             });
@@ -208,7 +208,7 @@ for (let i = 0; i < blimpys.length; i++) {
                     foodObjectWithNoProto = blimpy.withNoClass(foodObject);
                     assert.equal(
                         foodObjectWithNoProto.__proto__,
-                        Object.prototype,
+                        Object.prototype
                     );
                 });
             });
