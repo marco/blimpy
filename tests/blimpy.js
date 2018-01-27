@@ -95,6 +95,43 @@ for (let i = 0; i < blimpys.length; i++) {
                     );
                 });
             });
+
+            describe('.withProto', () => {
+                let foodObjectWithProto;
+
+                beforeEach(() => {
+                    foodObjectWithProto = blimpy.withProto(
+                        Food.prototype,
+                        foodObject
+                    );
+                });
+
+                it('should not mutate the original object', () => {
+                    assert.equal(foodObject.__proto__, Object.prototype);
+                });
+
+                it('should return the object with the new prototype', () => {
+                    assert.equal(
+                        foodObjectWithProto.__proto__,
+                        Food.prototype
+                    );
+                });
+
+                it('should add working methods', () => {
+                    assert.equal(foodObjectWithProto.getPriceStr(), '$50');
+                });
+
+                it('should work on objects with a prototype', () => {
+                    let drinkObject = new Drink('water');
+                    assert.equal(drinkObject.__proto__, Drink.prototype);
+
+                    foodObjectWithProto = blimpy.withClass(Food, drinkObject);
+                    assert.equal(
+                        foodObjectWithProto.__proto__,
+                        Food.prototype
+                    );
+                });
+            });
         });
 
         describe('"negatives"', () => {

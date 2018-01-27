@@ -90,6 +90,16 @@ npm install --save blimpy
  - `someObject`: The object to add it to.
  - **Returns**: The new object with the class's prototype.
 
+#### withProto
+
+*Adds a prototype to an object (without mutating it).*
+
+`blimpy.withProto(someProto, someObject)`
+
+ - `someClass`: The prototype to add.
+ - `someObject`: The object to add it to.
+ - **Returns**: The new object with the prototype.
+
 #### withNoClass
 
 *Removes an object's prototype (without mutating it).* Actually, this sets the object's prototype to `Object.prototype` (the default object prototype).

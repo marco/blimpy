@@ -1,6 +1,20 @@
 let blimpy = {};
 
 /**
+ * Adds a prototype to an object without mutating it.
+ *
+ * @param {function} someClass The prototype to use.
+ * @param {object} someObject The object to set the prototype of.
+ * @returns {object} The object with the new prototype.
+ */
+blimpy.withProto = function blimpyWithPrototype(someProto, someObject) {
+    return Object.assign(
+        Object.create(someProto),
+        someObject,
+    );
+}
+
+/**
  * Adds a class's prototype to an object without mutating it.
  *
  * @param {function} someClass The class to use.
