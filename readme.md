@@ -5,7 +5,7 @@
     <p>
       If you need to quickly assign a prototype to an object,
       <br/>
-      such as one from a database, **blimpy** is the best way to do it.
+      such as one from a database, <strong>blimpy</strong> is the best way to do it.
     </p>
     <p>
         <img src="https://img.shields.io/npm/v/blimpy.svg" />
