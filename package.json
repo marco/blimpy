@@ -4,14 +4,16 @@
   "description": "Easily set the class of an object.",
   "main": "dist/blimpy.min.js",
   "scripts": {
-    "build": "minify blimpy.js --out-file blimpy.min.js",
+    "build": "babel src/blimpy.js -o dist/blimpy.min.js",
     "test": "mocha tests"
   },
   "repository": "github:skunkmb/blimpy",
   "author": "Marco Burstein <theskunkmb@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-minify": "^0.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.2.0",
     "mocha": "^5.0.0"
   }
 }

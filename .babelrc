@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "minify",
+    [
+      "env",
+      {
+        "targets": {
+          "node": "6"
+        }
+      }
+    ]
+  ]
+}
