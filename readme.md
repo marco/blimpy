@@ -23,6 +23,12 @@ Most databases don't store an object's prototype. This means if you're doing som
 
 and then retrieving it later, *it won't have the methods from `FoodClass`*.
 
+**What should you do?**
+
+ - Using `Object.setPrototypeOf` [is terrible for performance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf).
+ - A combination of `Object.assign` and `Object.create` is ugly if you're doing it over and over again.
+ - `Object.create` and `Object.getOwnPropertyDescriptors` is even worse.
+
 **Using blimpy makes it easy to add a prototype to an object.**
 
  - blimpy is **small** (`blimpy.min.js` is less than `200 bytes`).
