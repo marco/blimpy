@@ -1,6 +1,6 @@
 {
   "name": "blimpy",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Easily set the class of an object.",
   "main": "dist/blimpy.min.js",
   "scripts": {
