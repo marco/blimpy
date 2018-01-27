@@ -7,7 +7,7 @@ let blimpy = {};
  * @param {object} someObject The object to set the prototype of.
  * @returns {object} The object with the new prototype.
  */
-blimpy.withClass(someClass, someObject) {
+blimpy.withClass = function blimpyWithClass(someClass, someObject) {
     return Object.assign(
         Object.create(someClass.prototype),
         someObject,
@@ -21,7 +21,7 @@ blimpy.withClass(someClass, someObject) {
  * @param {object} someObject The object to remove the prototype of.
  * @returns {object} The object without the prototype.
  */
-blimpy.withNoClass(someObject) {
+blimpy.withNoClass = function blimpyWithNoClass(someObject) {
     return blimpy.withClass(Object, someObject);
 }
 
