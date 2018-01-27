@@ -44,7 +44,7 @@ class Drink {
     }
 }
 
-let blimpys = ['blimpy', 'blimpy.min'];
+let blimpys = ['src/blimpy', 'dist/blimpy.min'];
 
 for (let i = 0; i < blimpys.length; i++) {
     let currentBlimpy = blimpys[i]

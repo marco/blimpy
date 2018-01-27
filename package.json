@@ -2,7 +2,7 @@
   "name": "blimpy",
   "version": "0.0.3",
   "description": "Easily set the class of an object.",
-  "main": "blimpy.min.js",
+  "main": "dist/blimpy.min.js",
   "scripts": {
     "build": "minify blimpy.js --out-file blimpy.min.js",
     "test": "mocha tests"
