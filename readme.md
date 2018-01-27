@@ -109,6 +109,15 @@ npm install --save blimpy
  - `someObject`: The object to remove the class from.
  - **Returns**: The new object without a prototype.
 
+#### withNoProto
+
+*Removes an object's prototype (without mutating it).* Unlike `withNoClass`, this sets the prototype of the object to `null`, not `Object.prototype`. For example, this means that `blimpy.withNoClass(someObject).toString()` works but `blimpy.withNoProto(someObject).toString()` *does not*.
+
+`blimpy.withNoClass(someObject)`
+
+ - `someObject`: The object to remove the class from.
+ - **Returns**: The new object without a prototype.
+
 ## Full Example File
 
 ```js
