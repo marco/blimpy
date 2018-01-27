@@ -1,5 +1,4 @@
 let assert = require('assert');
-let blimpy = require('../blimpy.js');
 
 /**
  * A "food" class for testing.
@@ -45,90 +44,103 @@ class Drink {
     }
 }
 
-describe('blimpy', () => {
-    describe('"positives"', () => {
-        let foodObject;
+let blimpys = ['blimpy', 'blimpy.min'];
 
-        beforeEach(() => {
-            foodObject = {
-                name: 'apple',
-                price: 50,
-            };
-            assert.equal(foodObject.__proto__, Object.prototype);
-        });
+for (let i = 0; i < blimpys.length; i++) {
+    let currentBlimpy = blimpys[i]
+    let blimpy = require('../' + currentBlimpy + '.js');
 
-        describe('.withClass', () => {
-            let foodObjectWithProto;
+    describe(currentBlimpy, () => {
+        describe('"positives"', () => {
+            let foodObject;
 
             beforeEach(() => {
-                foodObjectWithProto = blimpy.withClass(Food, foodObject);
-            });
-
-            it('should not mutate the original object', () => {
-                assert.equal(foodObject.__proto__, Object.prototype);
-            });
-
-            it('should return the object with the new prototype', () => {
-                assert.equal(foodObjectWithProto.__proto__, Food.prototype);
-            });
-
-            it('should add working methods', () => {
-                assert.equal(foodObjectWithProto.getPriceStr(), '$50');
-            });
-
-            it('should work on objects with a prototype', () => {
-                let drinkObject = new Drink('water');
-                assert.equal(drinkObject.__proto__, Drink.prototype);
-
-                foodObjectWithProto = blimpy.withClass(Food, drinkObject);
-                assert.equal(foodObjectWithProto.__proto__, Food.prototype);
-            });
-        });
-    });
-
-    describe('"negatives"', () => {
-        let foodObject;
-
-        beforeEach(() => {
-            foodObject = new Food('apple');
-            assert.equal(foodObject.__proto__, Food.prototype);
-        });
-
-        describe('.withNoClass', () => {
-            let foodObjectWithNoProto;
-
-            beforeEach(() => {
-                foodObjectWithNoProto = blimpy.withNoClass(foodObject);
-            });
-
-            it('should not mutate the original object', () => {
-                assert.equal(foodObject.__proto__, Food.prototype);
-            });
-
-            it('should return the object with the new prototype', () => {
-                assert.equal(
-                    foodObjectWithNoProto.__proto__,
-                    Object.prototype,
-                );
-            });
-
-            it('should remove working methods', () => {
-                assert.equal(foodObjectWithNoProto.getPriceStr, undefined);
-            });
-
-            it('should work on objects with no prototype', () => {
                 foodObject = {
                     name: 'apple',
                     price: 50,
                 };
                 assert.equal(foodObject.__proto__, Object.prototype);
+            });
 
-                foodObjectWithNoProto = blimpy.withNoClass(foodObject);
-                assert.equal(
-                    foodObjectWithNoProto.__proto__,
-                    Object.prototype,
-                );
+            describe('.withClass', () => {
+                let foodObjectWithProto;
+
+                beforeEach(() => {
+                    foodObjectWithProto = blimpy.withClass(Food, foodObject);
+                });
+
+                it('should not mutate the original object', () => {
+                    assert.equal(foodObject.__proto__, Object.prototype);
+                });
+
+                it('should return the object with the new prototype', () => {
+                    assert.equal(
+                        foodObjectWithProto.__proto__,
+                        Food.prototype
+                    );
+                });
+
+                it('should add working methods', () => {
+                    assert.equal(foodObjectWithProto.getPriceStr(), '$50');
+                });
+
+                it('should work on objects with a prototype', () => {
+                    let drinkObject = new Drink('water');
+                    assert.equal(drinkObject.__proto__, Drink.prototype);
+
+                    foodObjectWithProto = blimpy.withClass(Food, drinkObject);
+                    assert.equal(
+                        foodObjectWithProto.__proto__,
+                        Food.prototype
+                    );
+                });
+            });
+        });
+
+        describe('"negatives"', () => {
+            let foodObject;
+
+            beforeEach(() => {
+                foodObject = new Food('apple');
+                assert.equal(foodObject.__proto__, Food.prototype);
+            });
+
+            describe('.withNoClass', () => {
+                let foodObjectWithNoProto;
+
+                beforeEach(() => {
+                    foodObjectWithNoProto = blimpy.withNoClass(foodObject);
+                });
+
+                it('should not mutate the original object', () => {
+                    assert.equal(foodObject.__proto__, Food.prototype);
+                });
+
+                it('should return the object with the new prototype', () => {
+                    assert.equal(
+                        foodObjectWithNoProto.__proto__,
+                        Object.prototype,
+                    );
+                });
+
+                it('should remove working methods', () => {
+                    assert.equal(foodObjectWithNoProto.getPriceStr, undefined);
+                });
+
+                it('should work on objects with no prototype', () => {
+                    foodObject = {
+                        name: 'apple',
+                        price: 50,
+                    };
+                    assert.equal(foodObject.__proto__, Object.prototype);
+
+                    foodObjectWithNoProto = blimpy.withNoClass(foodObject);
+                    assert.equal(
+                        foodObjectWithNoProto.__proto__,
+                        Object.prototype,
+                    );
+                });
             });
         });
     });
-});
+}
